@@ -71,7 +71,7 @@ numbers3.forEach(function(numbers3) {
 // Logold ki a 4. elemet
 
 const numbers4 = [1, 2, 3, 8, 5, 6];
-numbers4.map(function replace());
+console.log();
 
 
 'use strict';
@@ -80,9 +80,23 @@ numbers4.map(function replace());
 // Növeld meg a harmadik elem értékét!
 // Logold ki a harmadik elemet a konzolra!
 
+const numbers5 = [1, 2, 3, 4, 5];
+let moddedNumber = numbers5[2];
+moddedNumber++;
+numbers5.splice(2, 1);
+numbers5.splice(2, 0, moddedNumber);
+console.log(numbers5[2]);
+console.log(moddedNumber);
+
+console.log();
 'use strict';
 // Hozz létre egy `animals` változót az alábbi tartalommal:
 // `['koal', 'pand', 'zebr']`
 // Minden elemhez fűzz hozzá egy "a" betűt
 // Próbálj meg beépített metódust használni ciklus helyett!
 
+const animals = ['koal', 'pand', 'zebr'];
+animals.forEach( string => string + 'a');
+// let animalsPlusA = animals.map();
+// animals = animalsPlusA;
+console.log(animals);
