@@ -71,13 +71,14 @@ console.log();
 // Logold ki a 4. elemet
 
 const numbers4 = [1, 2, 3, 8, 5, 6];
-numbers4.map( function replace (item) {
+numbers4.map( function replace(item) {
     if (item === 8) {
         return item / 2;
-        console.log(numbers4[3]);
+        console.log("nyuszi: " + item);
     } 
 });
 
+console.log(numbers4[3]);
 
 
 'use strict';

@@ -16,5 +16,6 @@ function add(a, b) {
     return a + b;
 }
 
+
 console.log( add3And2(), add(3, 2)); // miért adja ezt? > [Function: add3And2] 5
 
