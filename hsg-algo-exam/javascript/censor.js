@@ -18,7 +18,7 @@ a te feladatod, hogy megadd a függvény paramétereket
 
 function censor(text, originalWord, newWord) {
     const result = text.split(originalWord).join(newWord);
-    console.log(result);    
+    return result;   
 }
 
 censor('A kedvenc színem a zöld.', 'zöld', 'kék');
