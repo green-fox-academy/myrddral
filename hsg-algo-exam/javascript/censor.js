@@ -18,10 +18,10 @@ a te feladatod, hogy megadd a függvény paramétereket
 
 function censor(text, originalWord, newWord) {
     const result = text.split(originalWord).join(newWord);
-    return result;   
+    console.log(result);   
 }
 
-censor('A kedvenc színem a zöld.', 'zöld', 'kék');
+censor('A kedvenc színem a barna.', 'barna', 'szürke');
 
 // ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑ INNEN FELFELE LÉVŐ DOLGOKAT SZERKESZTHETED ↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑↑
 // ------ EZT A SORT ÉS AMI EZ ALATT VAN AZT NE TÖRÖLD, NE MÓDOSÍTSD, EZ ALÁ A SOR ALÁ NE ÍRJ SEMMIT,
