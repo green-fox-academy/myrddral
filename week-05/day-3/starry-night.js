@@ -9,13 +9,15 @@ ctx.fillStyle = "black";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 function drawStar () {
+    let colors = [ '#f2f2f2', '#e6e6e6', '#d9d9d9', '#cccccc', '#bfbfbf', '#b3b3b3', '#a6a6a6', '#999999' ];
+    let color = colors[Math.floor(Math.random() * colors.length)];
     let posX = Math.floor(Math.random() * 600);
     let posY = Math.floor(Math.random() * 400);
-    ctx.fillStyle = 'grey';
+    ctx.fillStyle = color;
     ctx.fillRect(posX, posY, 2, 2);
 }
 
-setInterval(function(){ drawStar(); }, 100);
+setInterval(function(){ drawStar(); }, 10);
 
 
 
