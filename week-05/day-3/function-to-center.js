@@ -7,30 +7,34 @@ const ctx = canvas.getContext('2d');
 
 let posX = 0;
 let posY = 0;
-for (let i = 0; i <= 29; i++) {  
+for (let i = 0; i <= 29; i++) {
+    ctx.beginPath();
     ctx.moveTo(posX, 0);
-    ctx.lineTo(canvas.clientWidth/2, canvas.clientHeight/2);
+    ctx.lineTo(canvas.clientWidth / 2, canvas.clientHeight / 2);
     ctx.stroke();
     posX += 20;
 }
 for (let i = 0; i <= 19; i++) {
+    ctx.beginPath();
     ctx.moveTo(0, posY);
-    ctx.lineTo(canvas.clientWidth/2, canvas.clientHeight/2);
+    ctx.lineTo(canvas.clientWidth / 2, canvas.clientHeight / 2);
     ctx.stroke();
     posY += 20;
 }
 let posA = 600;
 let posB = 400;
 
-for (let i = 0; i <= 30; i++) {  
+for (let i = 0; i <= 30; i++) {
+    ctx.beginPath();
     ctx.moveTo(posA, 400);
-    ctx.lineTo(canvas.clientWidth/2, canvas.clientHeight/2);
+    ctx.lineTo(canvas.clientWidth / 2, canvas.clientHeight / 2);
     ctx.stroke();
     posA -= 20;
 }
 for (let i = 0; i <= 20; i++) {
+    ctx.beginPath();
     ctx.moveTo(600, posB);
-    ctx.lineTo(canvas.clientWidth/2, canvas.clientHeight/2);
+    ctx.lineTo(canvas.clientWidth / 2, canvas.clientHeight / 2);
     ctx.stroke();
     posB -= 20;
 }
