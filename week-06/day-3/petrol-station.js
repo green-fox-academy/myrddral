@@ -12,8 +12,6 @@
 
 'use strict';
 
-const { stat } = require("fs");
-
 class Station {
     constructor(gasAmount = 180) {
         this.gasAmount = gasAmount;
