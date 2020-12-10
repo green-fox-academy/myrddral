@@ -1,0 +1,19 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    min-height: 75rem;
+    padding-top: 4.5rem;
+    background-color: aliceblue;
+    /* background-image: url(https://image.freepik.com/free-vector/stylish-hexagonal-line-pattern-background_1017-19742.jpg); */
+    background-repeat: repeat;
+    background-size: 300px;
+
+}
+
+  
+  h1,h2,h3,h4,h5,h6 {
+    font-family: 'Raleway', sans-serif;
+  }
+  p {
+      font-size: 18px;
+      font-family: 'Raleway', sans-serif;
+  }

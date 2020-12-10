@@ -23,13 +23,19 @@ class sharpie {
 }
 
 const sharpies = [
-    new sharpie('', 0.5),
+    new sharpie('blue', 0.5),
     new sharpie('purple', 0.3),
     new sharpie('red', 0.5),
 ]
 
 if (sharpies[0].isEmpty()) {
     console.log('A színt kötelező megadni!');
+
 }
 
-console.log(sharpies);
+
+class SharpieSet {
+    constructor()
+}
+
+// console.log(sharpies);
