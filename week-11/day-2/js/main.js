@@ -8,6 +8,7 @@ function selectGenre() {
     // set movie visibility based on genre
   movieList.value = "default";
   for (let i = 1; i < movieList.length; i++) {
+      console.log(movieList);
     switch (genreList.value) {
       case "sci-fi":
         genreList.value === "sci-fi" && movieList[i].className.includes("sci-fi")
