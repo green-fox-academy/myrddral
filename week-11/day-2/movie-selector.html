@@ -8,27 +8,36 @@
   </head>
   <body>
     <div class="container">
-      <form method="POST">
+      <form method="POST" id="movie-selector">
         <div class="header">
           <h2>Movie Selector</h2>
         </div>
         <div class="selector-box">
           <select class="form-control" id="genre-list">
-            <option value="genre" label="Select a genre"></option>
+            <option value="default" label="Select a genre"></option>
             <option value="sci-fi" label="Sci-Fi"></option>
             <option value="drama" label="Drama"></option>
             <option value="comedy" label="Comedy"></option>
           </select>
           <select class="form-control" id="movie-list">
-            <option class="sci-fi" label="Select a movie"></option>
-            <option class="sci-fi" label="Star Wars"></option>
-            <option class="sci-fi" label="Star Trek"></option>
-            <option class="sci-fi" label="Space Odissey"></option>
-            <option class="sci-fi" label="Moon"></option>sci-fi
+            <option class="" value="default">Select a movie</option>
+            <option class="sci-fi hidden" value="Star Wars">Star Wars</option>
+            <option class="sci-fi hidden" value="Star Trek">Star Trek</option>
+            <option class="sci-fi hidden" value="Space Odissey">Space Odissey</option>
+            <option class="sci-fi hidden" value="Moon">Moon</option>
+            <option class="comedy hidden" value="Borat">Borat</option>
+            <option class="comedy hidden" value="Knives Out">Knives Out</option>
+            <option class="comedy hidden" value="Palm Springs">Palm Springs</option>
+            <option class="comedy hidden" value="Jojo Rabbit">Jojo Rabbit</option>
+            <option class="drama hidden" value="Another Round">Another Round</option>
+            <option class="drama hidden" value="Parasite">Parasite</option>
+            <option class="drama hidden" value="Once upon a time">Once upon a time</option>
           </select>
         </div>
         <div class="result-text"></div>
+        <p>The selected movie is:<span id="movieChosen"> - </span></p>
       </form>
     </div>
+    <script src="./js/main.js"></script>
   </body>
 </html>
