@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Workshop: innerHTML, textContent</title>
+  <style>
+    .limebg {
+        background-color: limegreen;
+    }
+    </style>
+</head>
+
+<body>
+  <ul>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+    <li>placeholder</li>
+  </ul>
+
+  <!--
+      Dolgozhatsz a HTML script tag-en belül, vagy külön js fájlban is,
+      utóbbi esetén ne felejtsd el beimportálni a js fájlt az alábbi módon:
+      <script src="content-2.js"></script>
+    <script>
+      1) cseréld le a lista elemek tartalmát az alábbi lista elemeire
+      ['apple', 'banana', 'cat', 'dog']
+      2) változtasd meg az <ul> elem háttérszínét lime zöldre ('limegreen')
+        használd a 'class'-t a style tulajdonság helyett
+    </script>
+  -->
+  <script>
+      const ul = document.querySelector('ul');
+      const li = document.querySelectorAll('li');
+
+      li[0].textContent = "apple";
+      li[1].textContent = "banana";
+      li[2].textContent = "cat";
+      li[3].textContent = "dog";
+
+      ul.className = "limebg";
+  </script>
+</body>
+
+</html>
