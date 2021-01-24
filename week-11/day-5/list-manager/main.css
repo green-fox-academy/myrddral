@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+section {
+    width: 100px;
+    margin: 10px;
+    border: 1px;
+    border-style: solid;
+}
+
+section > select {
+    width: 100%;
+    border: none;
+    outline: 0px;
+    overflow: hidden;
+}
+
+nav {
+    width: 100px;
+    margin: 10px;
+    border: 1px;
+    border-color: lightgrey;
+}
+
+nav > button {
+    margin: 0px;
+    width: 100%;
+}
