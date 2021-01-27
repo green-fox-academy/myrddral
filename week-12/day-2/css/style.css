@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(141, 86, 146);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.container {
+  background-color: #f7f7f7;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  width: 400px;
+  max-width: 100%;
+}
+
+.header {
+  background-color: #f3f3f3;
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 40px;
+}
+
+.header h2 {
+  margin: 0;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  border: 2px solid #f0f0f0;
+  border-radius: 4px;
+  display: block;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 10px;
+  width: 100%;
+}
+
+.form-control.success input {
+    border-color: rgb(0, 204, 0);
+}
+
+.form-control.error input {
+    border-color: rgb(235, 0, 0);
+}
+
+.form-control i {
+    visibility: hidden;
+    position: absolute;
+    top: 30px;
+    right: 10px;
+}
+
+.form-control.success i.check {
+    visibility: visible;
+    color: rgb(0, 204, 0);
+}
+
+.form-control.error i.error {
+    visibility: visible;
+    color: rgb(235, 0, 0);
+}
+
+.form-control small {
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    font-size: 12px;
+}
+
+.form-control.error small {
+    visibility: visible;
+    color: rgb(235, 0, 0);
+}
+
+.form button {
+    background-color: #9859b3;
+    border: 2px solid #9859b3;
+    border-radius: 4px;
+    color: #fff;
+    display: block;
+    font-family: inherit;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+}
