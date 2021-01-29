@@ -62,11 +62,23 @@ app.use("/static", express.static("static"));
 
 // kezdőoldal
 app.get("/", (req, res) => {
-  // jelenítse meg a `home.ejs`-t
+  let chosenAlcohol = req.query.alcohol;
+  let filteredCocktails = [];
+
+  if (chosenAlcohol) {
+    cocktails.forEach(element => {
+      if (element.contains.includes(chosenAlcohol)) {
+        filteredCocktails.push(element);
+      }
+    });
+  } else {
+    filteredCocktails = cocktails;
+  }
   res.render("home", {
     // title: 'Things to do today:'
     title: "Cocktails",
-    cocktails: cocktails,
+    cocktails: filteredCocktails,
+    alcoholList: alcoholList,
     alcohols: alcohols,
   });
 });

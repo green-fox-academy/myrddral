@@ -9,22 +9,23 @@
     <body>
     <div class="container">
         <header>
-        <h1> <%= title %></h1>
-        <nav>
-            <div class="nav-item">ALL</div>
+            <h1> <%= title %></h1>
+        </header>
+        <nav class="topnav">
+            <a href="/">ALL</a>
             <% for (let i = 0; i < alcohols.length; i++) { %>
-                <div class="nav-item"><%= alcohols[i]%></div>
+                <a href="/?alcohol=<%= alcoholList[i] %> "><%= alcohols[i]%></a>
                 <%  } %>
         </nav>
-        </header>
+        <div class="content-control">
             <table>
                 <tr>
-                    <td class="name">NAME</td>
-                    <td class="price">PRICE</td>
+                    <td class="name-header">NAME</td>
+                    <td class="price-header">PRICE</td>
                 </tr>
             <% for (let i = 0; i<cocktails.length; i++) { %>
                 <tr>
-                    <td class="name"><li> <%= cocktails[i].name %>
+                    <td class="name"><%= cocktails[i].name %>
                         <%
                       if(!cocktails[i].isAlcoholic) { %>
                       <span>(non-alcoholic)</span>
@@ -32,11 +33,12 @@
                     <small><%= cocktails[i].contains.join(', ') %></small></li>
                     </td>
                     <td class="price">
-                        <li> <%= cocktails[i].price %> Ft
+                        <%= cocktails[i].price %> Ft
                     </td>
                   </tr>
             <% } %>
         </table>
+    </div>
     </div>
     </body>
 </html>
