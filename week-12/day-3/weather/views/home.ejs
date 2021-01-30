@@ -8,7 +8,7 @@
     </head>
     <body>
         <% for (let i = 0; i < forecasts.length; i++) { %>
-        <div class="container">
+        <a href="/cities/<%= forecasts[i].varos %> " class="container-dashboard">
             <div class="citydata">
                 <%= forecasts[i].varos %> 
                 <p class="location"><%= forecasts[i].helyszin %></p>
@@ -19,7 +19,7 @@
             <div class="weather-icon">
                 <img src="../static/<%= forecasts[i].idojaras[0].icon %>.png" width="90px">
             </div>
-        </div>
+        </a>
         <% } %> 
     </body>
 </html>

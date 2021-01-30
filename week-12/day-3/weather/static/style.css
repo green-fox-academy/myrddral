@@ -7,7 +7,7 @@
 body {
     font-family: "Palanquin", sans-serif;
     background-color: rgb(223, 223, 223);
-    color: rgb(28, 23, 46);
+    color: rgb(57, 45, 100);
 }
 
 p {
@@ -19,7 +19,21 @@ p.location {
     margin: 0;
 }
 
-.container {
+p.temperature {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+
+}
+p.message {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+    padding: 10px;
+    text-align: center;
+}
+
+.container-dashboard {
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -28,16 +42,43 @@ p.location {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
     max-width: 400px;
     height: 100px;
-    margin: 15px;
+    margin: 10px;
   }
 
-  .citydata {
-    padding-left: 15px;
-    font-size: 22px;
-    font-weight: 600;
-    width: 40%;
-  }
+.weathercard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 180px;
+  margin: 5px;
+}
 
-  .temperature {
-      font-size: 26px;
-  }
+.weathercard-flow-control {
+  display: flex;
+}
+
+.citydata {
+  padding-left: 15px;
+  font-size: 22px;
+  font-weight: 600;
+  width: 40%;
+}
+
+.temperature {
+  font-size: 26px;
+}
+
+h3 > small {
+  font-size: 14px;
+  font-weight: 100;
+}
+
+a.container-dashboard {
+  text-decoration: none;
+  color: inherit;
+}

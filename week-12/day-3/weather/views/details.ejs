@@ -7,10 +7,15 @@
         <link href="../static/style.css" rel="stylesheet">
     </head>
     <body>
-    <h1><%= cityWeatherData.varos %>  </h1>
-    <p><%= cityWeatherData.helyszin %> </p>
-    <p><%= cityWeatherData.idojaras[0].homerseklet %></p>
-    <p><%= cityWeatherData.idojaras[0].icon %></p>
-    <p><%= cityWeatherData.idojaras[0].uzenet %></p>
-    </body>
+        <h3><%= cityWeatherData.varos %> <small><%= cityWeatherData.helyszin %></small></h3>
+        <div class="weathercard-flow-control">
+            <% for (let i = 0; i < cityWeatherData.idojaras.length; i++) { %>
+                <div class="weathercard">
+                  <img src="../static/<%= cityWeatherData.idojaras[i].icon %>.png" width="90px">
+                  <p class="temperature"><%= cityWeatherData.idojaras[i].homerseklet %>°C</p>
+                  <p class="message"><%= cityWeatherData.idojaras[i].uzenet %></p>
+              </div>  
+              <% } %> 
+        </div>
+       
 </html>
