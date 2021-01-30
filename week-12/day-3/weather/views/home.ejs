@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title></title>
+        <title><%= title %> </title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="../static/style.css" rel="stylesheet">
     </head>
     <body>
-    <h1><%= title %> </h1>
+        <% for (let i = 0; i < forecasts.length; i++) { %>
+        <div class="container">
+            <div class="citydata">
+                <%= forecasts[i].varos %> 
+                <p class="location"><%= forecasts[i].helyszin %></p>
+            </div>
+            <div class="temperature">
+                <%= forecasts[i].idojaras[0].homerseklet %>°C
+            </div>
+            <div class="weather-icon">
+                <img src="../static/<%= forecasts[i].idojaras[0].icon %>.png" width="90px">
+            </div>
+        </div>
+        <% } %> 
     </body>
 </html>

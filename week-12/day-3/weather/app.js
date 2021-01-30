@@ -7,11 +7,11 @@ const forecasts = [
       varos: 'Seattle',
       helyszin: 'Washington, United States',
       idojaras: [
-        { homerseklet: 11, icon: 'felhos', uzenet: 'Teljes szürkeség.' },
-        { homerseklet: 11, icon: 'felhos', uzenet: 'Inkább maradj ágyban.' },
-        { homerseklet: 13, icon: 'felhos', uzenet: 'Uncsi...' },
-        { homerseklet: 12, icon: 'felhos', uzenet: 'Még mingig uncsi...' },
-        { homerseklet: 13, icon: 'reszben_felhos', uzenet: 'Nem túl napos.' },
+        { homerseklet: 11, icon: 'cloudy', uzenet: 'Teljes szürkeség.' },
+        { homerseklet: 11, icon: 'cloudy', uzenet: 'Inkább maradj ágyban.' },
+        { homerseklet: 13, icon: 'cloudy', uzenet: 'Uncsi...' },
+        { homerseklet: 12, icon: 'cloudy', uzenet: 'Még mingig uncsi...' },
+        { homerseklet: 13, icon: 'partly_cloudy', uzenet: 'Nem túl napos.' },
       ],
     },
     {
@@ -30,9 +30,9 @@ const forecasts = [
       helyszin: 'Spain',
       idojaras: [
         { homerseklet: 19, icon: 'sunny', uzenet: 'Napsütés.' },
-        { homerseklet: 15, icon: 'reszben_felhos', uzenet: 'Nem túl napos.' },
+        { homerseklet: 15, icon: 'partly_cloudy', uzenet: 'Nem túl napos.' },
         { homerseklet: 17, icon: 'sunny', uzenet: 'Egyelőre szép az idő.' },
-        { homerseklet: 16, icon: 'esos', uzenet: 'Rihanna - Umbrella' },
+        { homerseklet: 16, icon: 'rainy', uzenet: 'Rihanna - Umbrella' },
         { homerseklet: 18, icon: 'sunny', uzenet: 'Ismét napos.' },
       ],
     },
@@ -41,40 +41,51 @@ const forecasts = [
       helyszin: 'United Kingdom',
       idojaras: [
         { homerseklet: 4, icon: 'snowy', uzenet: 'Legyen már vége a télnek.' },
-        { homerseklet: 7, icon: 'esos', uzenet: 'Ugye van nálad esernyő?' },
-        { homerseklet: 10, icon: 'esos', uzenet: 'Megint esos.' },
-        { homerseklet: 9, icon: 'esos', uzenet: 'Uncsi...' },
-        { homerseklet: 11, icon: 'esos', uzenet: 'Uncsi... Megint.' },
+        { homerseklet: 7, icon: 'rainy', uzenet: 'Ugye van nálad esernyő?' },
+        { homerseklet: 10, icon: 'rainy', uzenet: 'Megint rainy.' },
+        { homerseklet: 9, icon: 'rainy', uzenet: 'Uncsi...' },
+        { homerseklet: 11, icon: 'rainy', uzenet: 'Uncsi... Megint.' },
       ],
     },
     {
       varos: 'Budapest',
       helyszin: 'Hungary',
       idojaras: [
-        { homerseklet: 12, icon: 'reszben_felhos', uzenet: 'Megint felhos.' },
-        { homerseklet: 16, icon: 'esos', uzenet: 'Túl nedves.' },
-        { homerseklet: 18, icon: 'reszben_felhos', uzenet: 'Végre nap.' },
-        { homerseklet: 16, icon: 'reszben_felhos', uzenet: 'Nem túl napos.' },
-        { homerseklet: 19, icon: 'reszben_felhos', uzenet: 'Elmegy.' },
+        { homerseklet: 12, icon: 'partly_cloudy', uzenet: 'Megint felhős.' },
+        { homerseklet: 16, icon: 'rainy', uzenet: 'Túl nedves.' },
+        { homerseklet: 18, icon: 'partly_cloudy', uzenet: 'Végre nap.' },
+        { homerseklet: 16, icon: 'partly_cloudy', uzenet: 'Nem túl napos.' },
+        { homerseklet: 19, icon: 'partly_cloudy', uzenet: 'Elmegy.' },
       ],
     },
   ];
 
-// beállítjuk, hogy view engine (nézet motor) az ejs legyen
 app.set("view engine", "ejs");
 
 app.use("/static", express.static("static"));
 
-// kezdőoldal
 app.get("/", (req, res) => {
-  // jelenítse meg a `home.ejs`-t
   res.render("home", {
-    // title: 'Things to do today:'
-    title: "Dashboard"
+    forecasts: forecasts,
+    title: "Weather Forecast"
   });
 });
 
-// a 3000-es porton indítsa el az alkalmazást
+app.get("/cities/:cityName", (req, res) => {
+
+  let cityName = req.params.cityName;
+  let cityWeatherData;
+
+  forecasts.forEach(element => {
+    if (element.varos === cityName) {
+      cityWeatherData = element;
+    }
+  });
+  res.render("details", {
+    cityWeatherData: cityWeatherData
+  });
+});
+
 app.listen(PORT, () => {
   console.log(`Your app listens on port ${PORT}.`);
 });

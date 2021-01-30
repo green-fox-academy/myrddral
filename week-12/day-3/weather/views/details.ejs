@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Weather for <%= cityWeatherData.varos %> </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="../static/style.css" rel="stylesheet">
+    </head>
+    <body>
+    <h1><%= cityWeatherData.varos %>  </h1>
+    <p><%= cityWeatherData.helyszin %> </p>
+    <p><%= cityWeatherData.idojaras[0].homerseklet %></p>
+    <p><%= cityWeatherData.idojaras[0].icon %></p>
+    <p><%= cityWeatherData.idojaras[0].uzenet %></p>
+    </body>
+</html>
