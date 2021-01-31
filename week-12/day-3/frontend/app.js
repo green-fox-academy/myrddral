@@ -26,3 +26,14 @@ app.get("/doubling", (req, res) => {
         res.json({"error": "Please provide an input!"});
     }
 });
+
+app.get("/greeter", (req, res) => {
+    let name = req.query.name;
+    let title = req.query.title;
+
+    if (name && title) {
+        res.json({
+            "welcome_message": `Oh, hi there ${name}, my dear ${title}!`
+        })
+    }
+});
