@@ -35,5 +35,18 @@ app.get("/greeter", (req, res) => {
         res.json({
             "welcome_message": `Oh, hi there ${name}, my dear ${title}!`
         })
+    } else {
+        res.json({"error": "Please provide name and title!"});
     }
+});
+
+app.get("/appenda/:appendable", (req, res) => {
+    let appendable = req.params.appendable;
+
+    res.json({
+        "appended": `${appendable}a`
+    })
+
+
+
 });
