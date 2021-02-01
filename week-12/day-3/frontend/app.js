@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const PORT = 3000;
 const path = require('path');
+const bodyParser = require('body-parser')
 const { addListener } = require("process");
 
 app.use(express.static('assets'));
+app.use(bodyParser.json())
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "index.hu.html"));
@@ -52,13 +54,33 @@ app.get("/appenda/:appendable", (req, res) => {
 
 app.post("/dountil/:action", (req, res) => {
     let action = req.params.action;
-    
-    res.send('POST message')
+    let input = req.body.until;
 
-    // if (action === "sum") {
-    //     res.send('POST sum')
-    // } else if (action === "factor") {
-    //     res.send('POST factor')
-    // }
+    if (action === "sum") {
+        res.json({
+            "result": sumOf(input)
+          });
+    } else if (action === "factor") {
+        res.json({
+            "result": factorOf(input)
+          });
+    }
 
+    function factorOf(num) {
+        let result = 1;
+    for (let i = 1; i <= num; i++) {
+        result *= i;
+    }
+        return result;
+    }
+
+    function sumOf(num) {
+        let result = 0;
+        for (let i = 1; i <= num; i++) {
+            result += i;
+            console.log(result);
+          }
+        return result;
+
+    }
 })
