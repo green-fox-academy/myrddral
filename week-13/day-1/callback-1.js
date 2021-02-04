@@ -7,6 +7,8 @@ const mapWith = (array, callback) => {
   // It stores the callback return values in the output.
   // The mapWith() should return with the output array.
 
+
+  
   return output;
 }
 
