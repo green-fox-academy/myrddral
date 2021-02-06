@@ -1,0 +1,12 @@
+[
+    {
+        "datetime": "2021-02-05T10:43:00+01:00",
+        "sender": "Szirmi",
+        "message": "This is my first message."
+    },
+    {
+        "datetime": "2021-02-05T10:45:00+01:00",
+        "sender": "Not Szirmi",
+        "message": "I like your first message."
+    }
+]

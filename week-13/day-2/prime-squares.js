@@ -7,7 +7,24 @@ for (let i = 2; i <= 100; i++) {
     section.appendChild(newDiv);
 }
 
-function isPrime() {
+function primeValidator() {
+    const div = document.querySelectorAll('div');
 
+    div.forEach(element => {
+        if (isPrime(element.textContent) === true) {
+            element.classList.add('prime');
+        } else {
+            console.log('not-pime');
+            element.classList.add('not-prime');
+
+        }
+    });
+
+    function isPrime(num) {
+        for(var i = 2; i < num; i++)
+            if(num % i === 0) return false;
+        return num > 1;
+    }
 }
 
+primeValidator();
