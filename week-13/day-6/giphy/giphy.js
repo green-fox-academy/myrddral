@@ -22,17 +22,24 @@ function search() {
 
   httpRequest.onload = function () {
     const response = JSON.parse(this.response);
-    
     for (let i = 0; i < 16; i++) {
-      insertThumbnail(response.data[i].images.downsized_still);
+      insertThumbnail(
+        response.data[i].images.downsized_still,
+        response.data[i].images.original.url
+      );
     }
 
-    function insertThumbnail(thumbnail) {
+    function insertThumbnail(thumbnail, original) {
+      const wrapper = document.createElement("a");
+      wrapper.setAttribute("href", original);
+
       const newThumbnail = document.createElement("IMG");
       newThumbnail.setAttribute("src", `${thumbnail.url}`);
-      newThumbnail.setAttribute("width", "100px");
+      newThumbnail.setAttribute("width", "20%");
       newThumbnail.setAttribute("height", "auto");
-      contentBox.appendChild(newThumbnail);
+
+      wrapper.appendChild(newThumbnail)
+      contentBox.appendChild(wrapper);
     }
   };
 }
