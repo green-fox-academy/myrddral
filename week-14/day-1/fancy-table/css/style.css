@@ -15,7 +15,7 @@ body {
 
 .container {
     padding-top: 100px;
-    border-radius: 4px;
+
 }
 
 table {
@@ -23,7 +23,6 @@ table {
     border-collapse: collapse;
     border-style: hidden;
 }
-
 
 td {
     color: rgb(102, 102, 102);
@@ -51,10 +50,26 @@ th {
     font-weight: normal;
 }
 
+th.month {
+    border-top-left-radius: 4px;
+}
+
+th.sales-amount {
+    border-top-right-radius: 4px;
+}
+
 tr:nth-child(even) {
     background-color: #dfdfdf;
 }
 
 tr:nth-child(odd) {
    background-color: #ffffff;
+}
+
+table tr:last-child td:first-child {
+    border-bottom-left-radius: 4px;
+}
+
+table tr:last-child td:last-child {
+    border-bottom-right-radius: 4px;
 }
