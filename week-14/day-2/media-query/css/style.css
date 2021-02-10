@@ -1,0 +1,42 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.side-element1 {
+    height: 20vh;
+    width: 20vh;
+    background-color: green;
+}
+
+.side-element2 {
+    height: 20vh;
+    width: 20vh;
+    background-color: purple;
+}
+
+.middle-element {
+    height: 20vh;
+    width: 40vh;
+    background-color: rgb(255, 183, 29);
+}
+
+@media screen and (max-width: 80vh) {
+    .container {
+        flex-direction: column;
+    }
+
+    .side-element1, .side-element2 {
+        width: 40vh;
+    }
+}
