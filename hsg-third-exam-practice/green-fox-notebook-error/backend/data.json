@@ -1,0 +1,62 @@
+{
+	"users": [
+		{
+			"id": 1,
+			"name": "Tim"
+		},
+		{
+			"id": 2,
+			"name": "Tom"
+		},
+		{
+			"id": 3,
+			"name": "Rick"
+		},
+		{
+			"id": 4,
+			"name": "Chuck"
+		},
+		{
+			"id": 5,
+			"name": "Dan"
+		},
+		{
+			"id": 6,
+			"name": "James"
+		}
+	],
+	"tickets": [
+		{
+			"id": 21,
+			"reporter": "Tom",
+			"manufacturer": "Dell",
+			"serial_number": 123456789,
+			"description": "screen pixel error",
+			"reported_at": "2018-01-10T23:00:00.000Z"
+		},
+		{
+			"id": 27,
+			"reporter": "Rick",
+			"manufacturer": "Dell",
+			"serial_number": 987654321,
+			"description": "touchpad is not working",
+			"reported_at": "2018-01-17T23:00:00.000Z"
+		},
+		{
+			"id": 9,
+			"reporter": "Dan",
+			"manufacturer": "Lenovo",
+			"serial_number": 987655436,
+			"description": "my colleague is not working",
+			"reported_at": "2018-01-23T23:00:00.000Z"
+		},
+		{
+			"id": 1,
+			"reporter": "Phil",
+			"manufacturer": "Samsung",
+			"serial_number": 987651132,
+			"description": "my colleague is not working",
+			"reported_at": "2018-02-23T23:00:00.000Z"
+		}
+	]
+}
