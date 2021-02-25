@@ -1,0 +1,170 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    /* padding: 100px; */
+    font-size: 10pt;
+    margin: 0;
+  }
+  
+  .transformed-text {
+    width: 200px;
+    height: 200px;
+    border: 1px solid black;
+  }
+  
+  .transformed-text/*:hover*/ {
+    animation-duration: 2s;
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  .transformed-text p {
+    animation-duration: 2s, 0.5s;
+    animation-name: increase, blink;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: translateX(0) rotate(0deg);
+      border-color: black;
+      border-radius: 0px;
+    }
+  
+    50% {
+      transform: translateX(100px) rotate(180deg);
+      border-color: red;
+      border-radius: 50px;
+    }
+  
+    100% {
+      transform: translateX(200px) rotate(360deg);
+      border-color: blue;
+      border-radius: 100px;
+    }
+  }
+  
+  @keyframes increase {
+    from {
+      font-size: 12pt;
+    }
+  
+    50% {
+      font-size: 72pt;
+    }
+  
+    to {
+      font-size: 12pt;
+    }
+  }
+  
+  @keyframes blink {
+    from {
+      color: #00000000;
+    }
+  
+    to {
+      color: #000000ff;
+    }
+  }
+  
+  .menu-bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border: 1px dotted #777;
+    text-align: center;
+    margin-top: -51px; /* !!!!! :( */
+  }
+  
+  .menu-bar ul {
+    list-style: none;
+  }
+  
+  .menu-bar ul li {
+    display: inline;
+  }
+  
+  .menu-bar:hover {
+    animation-name: show-menu;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes show-menu {
+    to {
+      margin-top: 0px;
+    }
+  }
+  
+  main {
+    text-align: center;
+    line-height: 2em;
+    display: grid;
+    gap: 0.1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr repeat(3, auto);
+    height: 100vh;
+  }
+  
+  header {
+    background: rgb(243, 96, 96);
+  }
+  
+  section {
+    background: rgb(126, 126, 251);
+  }
+  
+  nav {
+    background: rgb(111, 255, 111);
+  }
+  
+  aside {
+    background: rgb(255, 122, 255);
+    display: none;
+    /* visibility: hidden; */
+  }
+  
+  footer {
+    background: rgb(253, 253, 121);
+  }
+  
+  @media (min-width: 768px) {
+    body {
+      font-size: 14pt;
+    }
+  
+    main {
+      grid-template-columns: 150px 1fr 150px;
+      grid-template-rows: 100px minmax(300px, 3fr) 100px;
+    }
+  
+    header {
+      grid-column: 1 / 4;
+    }
+  
+    nav {
+      grid-column: 1;
+      grid-row: 2;
+    }
+  
+    section {
+      grid-column: 2;
+    }
+  
+    aside {
+      display: block;
+      /* visibility: visible; */
+    }
+  
+    footer {
+      grid-column: 1 / 4;
+    }
+  }
