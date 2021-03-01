@@ -1,5 +1,5 @@
 import './App.css';
-import {useEffect, useState} from 'react';
+import {useState} from 'react';
 
 function App() {
   let [amount, setAmount] = useState(0);
@@ -12,7 +12,7 @@ function App() {
     }
   }
 
-  const handleKeyPress = (event) => {
+  window.onkeydown = (event) => {
     if(event.key === 'ArrowUp') {
       setAmount(amount+1);
     } else if (event.key === 'ArrowDown') {
@@ -23,10 +23,6 @@ function App() {
       }
     }
   }
-
-  useEffect(() => {
-    window.addEventListener("keydown", handleKeyPress);
-  })
 
   return (
     <div className="App">
