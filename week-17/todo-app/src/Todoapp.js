@@ -27,42 +27,56 @@ const TodoApp = () => {
   const [todos, setTodos] = useState(todoList);
   const [doneTodos, setDoneTodos] = useState(doneTodoList);
 
-  const clickHandler = () => {
-      setTodos()
-  }
+  // sort lists by priority
+  let sortedTodos = todos.sort((a, b) => (a.prio > b.prio ? 1 : -1));
+  let sortedDoneTodos = doneTodos.sort((a, b) => (a.prio > b.prio ? 1 : -1));
 
-  const deleteTodo = (todos) => {
-      for( var i = 0; i < todos.length; i++){ 
-                                       
-        if ( todos[i] === {todos.text}) { 
-            todos.splice(i, 1); 
-            i--; 
+  const deleteTodo = (e) => {
+    if (doneTodos.length === 1) {
+      setDoneTodos([]);
+    } else {
+      let newList = [];
+      doneTodos.forEach((element) => {
+        if (!e.target.parentElement.textContent.includes(element.text)) {
+          newList.push(element);
+          setDoneTodos(newList); 
         }
-  }
-}
+      });
+    }
+  };
+
+  const doneTodo = (e) => {
+    // let newList = doneTodos;
+    // todos.forEach((element) => {
+    //   if (e.target.parentElement.textContent.includes(element.text)) {
+    //     newList.push(element);
+    //     setDoneTodos(newList);
+    //   }
+    // });
+  };
 
   return (
     <div className="main">
       <h3>Elvégzendő teendők</h3>
       <ul>
-        {todos.map((todo) => (
-          <div className="todos" key={uuidv4()}>
-            <li>
-              {todo.prio} {todo.text}{" "}
-              <button onClick={clickHandler}>KÉSZ</button>
-            </li>
-          </div>
+        {sortedTodos.map((todo) => (
+          <li key={uuidv4()}>
+            {todo.prio} {todo.text}{" "}
+            <button onClick={doneTodo} value="done">
+              KÉSZ
+            </button>
+          </li>
         ))}
       </ul>
       <h3>Kész</h3>
       <ul>
-        {doneTodos.map((todo) => (
-          <div className="doneTodos" key={uuidv4()}>
-            <li>
-              {todo.prio} {todo.text}{" "}
-              <button onClick={clickHandler}>TÖRLÉS</button>
-            </li>
-          </div>
+        {sortedDoneTodos.map((todo) => (
+          <li key={uuidv4()}>
+            {todo.prio} {todo.text}{" "}
+            <button onClick={deleteTodo} value="delete">
+              TÖRLÉS
+            </button>
+          </li>
         ))}
       </ul>
     </div>
