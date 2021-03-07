@@ -11,7 +11,6 @@ const Interval = () => {
   
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log(increment);
       setCounter(counter++)
         }, increment);
         return () => clearInterval(interval);
