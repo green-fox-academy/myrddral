@@ -16,7 +16,7 @@ const Aliaser = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (isValidUrl(url) === true) {
-      setError("");
+      setError(false);
       let generatedSecreCode = randomIntFromInterval(1000, 9999);
 
       const formData = { url, alias, hitCount: 0, generatedSecreCode };
