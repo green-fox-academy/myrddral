@@ -24,7 +24,7 @@ export default function Attractions() {
   }, []);
 
   const handleAddClick = () => {
-    history.push('/attractions/new')
+    history.push('/attraction/new')
   }
   
   useEffect(() => {

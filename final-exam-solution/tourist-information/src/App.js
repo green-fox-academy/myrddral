@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/">
           <Attractions />
         </Route>
-        <Route path="/attractions/new">
+        <Route path="/attraction/new">
           <AddAttraction />
         </Route>
       </Switch>
